@@ -1,4 +1,4 @@
-# Astro - Dodo Payments Minimal Boilerplate
+# Next - Dodo Payments Minimal Boilerplate
 
 A minimal boilerplate to integrate [Dodo Payments](https://dodopayments.com/) with [Next](https://nextjs.org/).
 
