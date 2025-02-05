@@ -9,16 +9,18 @@ export async function GET(request: Request) {
     const productWithQuantity = {product_id: productId as string, quantity: 1}
 
     const response = await dodopayments.payments.create({
+      // GET BILLING, CUSTOMER INFO FROM CUSTOMER AND PASS IT.
+      // FOR COUNTRY CODE THE VALUE SHOULD BE - ISO country code alpha2 variant
         billing: {
-            city: "Sydney",
-            country: "AU",
-            state: "New South Wales",
-            street: "1, Random address",
-            zipcode: "2000",
+            city: "", 
+            country: "",
+            state: "",
+            street: "",
+            zipcode: "",
           },
           customer: {
-            email: "test@example.com",
-            name: `Customer Name`,
+            email: "",
+            name: "",
           },
           payment_link: true,
           product_cart: [productWithQuantity],
