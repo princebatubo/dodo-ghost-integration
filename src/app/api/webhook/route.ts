@@ -5,7 +5,7 @@ import GhostAdminAPI from "@tryghost/admin-api";
 
 const webhook = new Webhook(process.env.DODO_PAYMENTS_WEBHOOK_KEY!);
 
-export async function POST(request) {
+export async function POST(request: Request) {
   const headersList = await headers();
   const rawBody = await request.text();
   const webhookHeaders = {
@@ -51,7 +51,7 @@ export async function POST(request) {
           break;
       }
     } else if (payload.data.payload_type === "Payment") {
-      switch (payment.type) {
+      switch (payload.type) {
         case "payment.succeeded":
           const paymentData = await dodopayments.payments.retrieve(payload.data.payment_id);
           console.log("-------PAYMENT DATA START---------");
@@ -79,4 +79,4 @@ export async function POST(request) {
     console.error(error);
     return new Response(JSON.stringify({ error: "Webhook verification failed" }), { status: 400 });
   }
-    }
+            }
