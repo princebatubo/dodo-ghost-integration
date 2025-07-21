@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@dodopayments/node": "^1.0.0",
+    "@dodopayments/nextjs": "^0.1.7",
     "@tryghost/admin-api": "^1.13.4",
     "next": "15.1.6",
     "react": "^19.0.0",
