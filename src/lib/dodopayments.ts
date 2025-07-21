@@ -1,4 +1,4 @@
-import { DodoPayments } from "@dodopayments/node";
+import { DodoPayments } from "@dodopayments/nextjs";
 
 export const dodopayments = new DodoPayments({
   apiKey:
