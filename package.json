@@ -11,7 +11,7 @@
   "dependencies": {
     "@dodopayments/nextjs": "^0.1.7",
     "@tryghost/admin-api": "^1.13.4",
-    "next": "15.1.6",
+    "next": "^15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "standardwebhooks": "^1.0.0"
@@ -22,7 +22,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6",
+    "eslint-config-next": "^15.3.4",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
