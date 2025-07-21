@@ -17,20 +17,17 @@ export default function ProductCard({ product }: { product: Product }) {
   const checkoutProduct = async (productId: number, is_recurring: boolean, useDynamicPaymentLinks: boolean) => {
     if (useDynamicPaymentLinks) {
       setLoading(true);
-      let productType = "onetime"
-      if (is_recurring) {
-        productType = "subscription"
-      }
+      const productType = is_recurring ? "subscription" : "onetime";
+      
       const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/checkout/${productType}?productId=${productId}`, {
         cache: "no-store",
       });
       const data = await response.json();
-      router.push(data.payment_link)
+      router.push(data.payment_link);
     } else {
-      let checkoutUrl = `https://test.checkout.dodopayments.com/buy/${productId}?quantity=1&redirect_url=${process.env.NEXT_PUBLIC_BASE_URL}`
-      router.push(checkoutUrl)
+      const checkoutUrl = `https://test.checkout.dodopayments.com/buy/${productId}?quantity=1&redirect_url=${process.env.NEXT_PUBLIC_BASE_URL}`;
+      router.push(checkoutUrl);
     }
-
   };
 
   return (
