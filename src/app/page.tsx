@@ -1,23 +1,17 @@
 import ProductCard from "./components/ProductCard"
+
 export default async function Home() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
     cache: 'no-store'
   });
   const products = await response.json();
+  
   type Product = {
     product_id: number;
     name: string;
     description: string;
     price: number;
     is_recurring: boolean;
-  };
-  
-  const checkoutProduct = async (productId: number)  => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/checkout?productId=${productId}`, {
-      cache: 'no-store'
-    });
-    const data = await response.json();
-
   };
 
   return (
